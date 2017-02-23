@@ -24,10 +24,10 @@ console.log()
  *      larger breeds, develop more quickly in the first two years of life.
  */
 function calculateDogHumanAge(dogAge) {
-    if (emin < 2) {
-        return (emin * 10.5);
+    if (dogAge < 2) {
+        return (dogAge * 10.5);
     } else {
-        return (((emin - 2) * 4) + 21)
+        return (((dogAge - 2) * 4) + 21)
     }
 }
 console.log()
@@ -80,8 +80,13 @@ function calculateStringLength(stringValue) {
  * Follow their example, and modify it to complete this setup code
  */
 // Clear result field on input focus
-document.getElementById("string").addEventListener("focus", function () {
+$("#string").on("focus", function () {
+    //   
+
     // Get the length form field and clear out the value
+
+
+    document.getElementById("length").value = "";
 
 });
 
@@ -91,11 +96,13 @@ document.getElementById("submit4").addEventListener("click", function () {
 
 
     // Get the input value from the form & log the value
-
+    let string = document.getElementById("string").value;
 
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
+    let length = calculateStringLength(string);
 
+    document.getElementById("length").value = length;
 
     // Use the variable to set the output form field value & log the result to the console
 
